@@ -1,0 +1,27 @@
+perl commands used:
+
+1. perl -v : to know if perl is installed propelry and the version of perl
+2. perldoc perl : docs of perl
+3. perldoc -tf print : dc of the print command
+4. run a perl script by perl <abc.pl>
+5. in UNIX running the perl prg as a prg not a script  do : chmod 755 <abc> now u can run it as ./abc or abc. Don't ever name your program "test" under Unix.
+The Unix shells have a command called test, and you'll be very frustrated when the
+wrong program runs
+
+6. scalar constants called literals: numeric literals and string literals.
+7.Variables such as $_, $", $/, $2, and $$ are special variables and should not be used as normal variables in your Perl programs.
+8.If your program has -w on the #! line at the beginning,
+the directive "use warnings" appears in your program (Perl 5.6).If you invoke Perl with the -w
+switch on the command line,try to use the value of a variable that you haven't
+previously set, Perl responds with this error message when your program runs and you try to use the value: Use of uninitialized value. i.e : using : #!/usr/bin/perl -w
+
+9.Operator Sample Usage Result
+int int(5.6234) Returns the integer portion of its argument (5).
+length length("nose") Returns the length of its string argument (4).
+lc lc("ME TOO") Returns its argument shifted to lowercase letters ("me too").
+uc uc("hal 9000") Returns its argument shifted to uppercase letters ("HAL 9000").
+cos cos(50) Returns the cosine of 50 in radians (.964966).
+file:///D|/1/0672327937/ch02lev1sec4.html (1 von 6) [12.11.2007 21:32:16]
+More Operators
+rand rand(5) Returns a random number from 0 to less than its argument. If the
+argument is omitted, a number between 0 and 1 is returned.
