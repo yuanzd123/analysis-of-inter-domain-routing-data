@@ -1,0 +1,19 @@
+echo "enter file "
+read fname
+echo "Extracting Out Prefixes and AS_Path"
+sed '/TIME:/ d' $1 > ripTime.dat
+sed '/TYPE:/ d' ripTime.dat > ripTimeType.dat
+sed '/FROM:/ d' ripTimeType.dat > ripTimeTypeFrom.dat
+sed '/AGGREGATOR:/ d' ripTimeTypeFrom.dat > ripTimeTypeFrom1.dat
+sed '/ORIGIN:/ d' ripTimeTypeFrom1.dat > ripTimeTypeFrom11.dat
+sed '/ATOMIC_AGGREGATE/ d' ripTimeTypeFrom11.dat > ripTimeTypeFrom2.dat
+sed '/NEXT_HOP:/ d' ripTimeTypeFrom2.dat > ripTimeTypeFromNexthop.dat
+sed '/MULTI_EXIT_DISC:/ d' ripTimeTypeFromNexthop.dat > ripTimeTypeFrmNxthpMult.dat
+sed '/ORIGINATED:/ d' ripTimeTypeFrmNxthpMult.dat > ripTimeTypeFrmNxthpMultOrg.dat
+sed '/COMMUNITIES:/ d' ripTimeTypeFrmNxthpMultOrg.dat > ripTimeTypeFrmNxthpMultOrgCom.dat
+sed '/SEQUENCE:/ d' ripTimeTypeFrmNxthpMultOrgCom.dat > ripTimeTypeFrmNxthpMultOrgComSq.dat
+sed '/-/ d' ripTimeTypeFrmNxthpMultOrgComSq.dat > ripTimeTypeFrmNxthpMultOrgComSqDs.dat
+sed '/^$/ d' ripTimeTypeFrmNxthpMultOrgComSqDs.dat >  ripTimeTypeFrmNxthpMultOrgComSqDsSpc.dat
+sed '/PEER/ d'  ripTimeTypeFrmNxthpMultOrgComSqDsSpc.dat > finalrip.dat
+sed '/^$/ d'  finalrip.dat > $2
+ls
